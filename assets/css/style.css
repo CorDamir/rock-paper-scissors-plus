@@ -10,11 +10,14 @@ body{
 
 /* header with buttons */
 header{
-    width: 100%;
     text-align: center;
     background-color: blue;
     padding: 15px;
     box-shadow: 0 3px 3px black;
+}
+
+main{
+    
 }
 
 /* set up flex container to
@@ -75,4 +78,25 @@ feel centered and same size as others */
 similar orientation as others */
 #paper img{
     transform: rotate(-15deg);
+}
+
+/* player score left, computer score
+right, color coded */
+#score-container{
+    font-family: "Nerko One", cursive;
+    font-size: 180%;
+    display: flex;
+    justify-content: center;
+}
+
+#you{
+    color: blue;
+    border: 2px solid blue;
+    border-right: 0;
+}
+
+#computer{
+   color: red;
+   border: 2px solid red;
+   border-left: 0;
 }
