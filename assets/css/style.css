@@ -1,8 +1,20 @@
+/* import "Nerko One" */
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
 /* remove margin and padding to
 use entire screens */
 body{
     margin: 0;
     padding: 0;
+}
+
+/* header with buttons */
+header{
+    width: 100%;
+    text-align: center;
+    background-color: blue;
+    padding: 15px;
+    box-shadow: 0 3px 3px black;
 }
 
 /* set up flex container to
