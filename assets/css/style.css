@@ -1,4 +1,66 @@
+/* remove margin and padding to
+use entire screens */
 body{
-    height: 100%;
-    background-color: forestgreen;
+    margin: 0;
+    padding: 0;
+}
+
+/* set up flex container to
+display game choices responsively */
+#game-container{
+    width: 90vw;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* style game choices into circular
+objects, set boundaries for flexbox */
+.choice-container{
+    margin: 5px;
+    width: 30vw;
+    height: 30vw;
+    min-width: 90px; 
+    min-height: 90px;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* make images grow with their 
+circular containers */
+.choice-container img {
+    flex-grow: 1;
+}
+
+/* ADJUST IMAGES TO ROUGHLY SAME 
+SIZE, ORIENTATION AND POSITION */
+
+/* shrink bigger rock, 
+scissor and lizard images */
+#rock img, #scissors img, #lizard img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+/* move and enlarge spock image to
+feel centered and same size as others */
+#spock img {
+    margin-left: 5%;
+    margin-bottom: 15%;
+    width: 120%;
+    height: 120%;
+}
+
+/* rotate paper image to have 
+similar orientation as others */
+#paper img{
+    transform: rotate(-15deg);
 }
