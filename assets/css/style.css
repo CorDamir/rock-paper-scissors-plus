@@ -97,19 +97,13 @@ right, color coded */
 }
 
 #you{
+    color: blue;
     border: 2px solid blue;
     border-right: 0;
 }
 
 #computer{
-   border: 2px solid red;
-   border-left: 0;
-}
-
-.blue{
-    color: blue;
-}
-
-.red{
     color: red;
+    border: 2px solid red;
+    border-left: 0;
 }
