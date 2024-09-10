@@ -97,15 +97,31 @@ function handleChoiceClick(){
     switch(result[1]){
         case 0: setScore(document.getElementById("computer-score")); break;
         case 1: setScore(document.getElementById("player-score")); break;
-        default: break;
+        default: break; //no action needed on draw
     }
+}
+/* #e05263 - use for computer color
+   #12bdeb - use for player color
+   #d9dbdf - default on page load
+*/
+function handleMouseOver(){
+    this.style.backgroundColor = "#14bdeb";
+}   
+
+function handleMouseOut(){
+    this.style.backgroundColor = "#d9dbdf";
 }
 /**
  * adds event listeners to all game choices
  */
 function initialSetup(){
     let choices = document.getElementsByClassName("choice-container");
-    for (let choice of choices) choice.addEventListener("click", handleChoiceClick);
+    
+    for (let choice of choices) {
+        choice.addEventListener("click", handleChoiceClick);
+        choice.addEventListener("mouseover", handleMouseOver);
+        choice.addEventListener("mouseout", handleMouseOut);
+    }
 }
 
 window.onload = initialSetup();

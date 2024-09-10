@@ -51,15 +51,7 @@ objects, set boundaries for flexbox */
     max-height: 200px;
     border-radius: 50%;
     border: 5px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* make images grow with their 
-circular containers */
-.choice-container img {
-    flex-grow: 1;
+    transition: all 800ms;
 }
 
 /* ADJUST IMAGES TO ROUGHLY SAME 
