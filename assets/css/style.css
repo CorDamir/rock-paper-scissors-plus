@@ -6,26 +6,33 @@ use entire screens */
 body{
     margin: 0;
     padding: 0;
+    font-family: "Nerko One", cursive;
 }
 
 /* header with buttons */
 header{
     text-align: center;
-    background-color: blue;
+    background-color: #243454;
     padding: 15px;
     box-shadow: 0 3px 3px black;
 }
 
-main{
-    
+/* message on top */
+#message{
+    font-size: 200%;
+    text-align: center;
 }
 
 /* set up flex container to
 display game choices responsively */
 #game-container{
-    width: 90vw;
+    background-color: #d9dbdf;
+    box-shadow: 0 0 3px 3px black;
+    border-radius: 15px;
+    width: 80vw;
+    max-width: 850px;
     margin: auto;
-    padding: 10px;
+    padding: 25px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -80,10 +87,10 @@ similar orientation as others */
     transform: rotate(-15deg);
 }
 
-/* player score left, computer score
+/* set up score keeping style:
+player score left, computer score
 right, color coded */
 #score-container{
-    font-family: "Nerko One", cursive;
     font-size: 180%;
     display: flex;
     justify-content: center;
