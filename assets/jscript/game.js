@@ -11,7 +11,6 @@ function chooseRandomly(){
         case 4: return "lizard";
     }
 }
-
 /**
  * determines a result and
  * @returns array [string message to display, winner]
@@ -53,12 +52,18 @@ function determineResult(playerChoice, computerChoice){
                 lizard: ["My lizard poisons your Spock!", 0],
             }
         }
-        
     //if choice is identical return draw, otherwise use result cases
     if (playerChoice === computerChoice) return [`I also chose ${computerChoice}. This round is a draw!`, 2];
     return results[playerChoice][computerChoice];
 }
-
+/**
+ * takes content of received element
+ * and increments it by one 
+ */
+function setScore(element){
+    let score = parseInt(element.innerText);
+    element.innerText = ++score;
+}
 /**
  * handles gameplay on user selection
  * and updates html with message and 
@@ -74,24 +79,11 @@ function handleChoiceClick(){
 
     //set score
     switch(result[1]){
-        case 0:
-            let computerScoreLocation =  document.getElementById("computer-score");
-            let computerScore = parseInt(computerScoreLocation.innerText[2]);
-            computerScore++;
-            computerScoreLocation.innerHTML = "S " + computerScore;
-            break;
-        
-        case 1: 
-            let playerScoreLocation =  document.getElementById("player-score");
-            let playerScore = parseInt(playerScoreLocation.innerText[0]);
-            playerScore++;
-            playerScoreLocation.innerHTML = playerScore + " V";
-            break;
-        
-        default: break; //in case of draw no need to update scores
-    }                
+        case 0: setScore(document.getElementById("computer-score")); break;
+        case 1: setScore(document.getElementById("player-score")); break;
+        default: break;
+    }
 }
-
 /**
  * adds event listeners to all game choices
  */
