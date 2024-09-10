@@ -20,50 +20,43 @@ function chooseRandomly(){
  * 2 - it's a draw
  */
 function determineResult(playerChoice, computerChoice){
-    switch(playerChoice){
-        //if both choices are identical, no need to check anything else
-        case computerChoice: return [`I also chose ${computerChoice}. This round is a draw!`, 2];
-
-        case "rock":
-            switch(computerChoice){
-                case "paper": return ["My paper covers your rock! Point for me.", 0];
-                case "scissors": return ["Your rock crushes my scissors! One for you.", 1];
-                case "lizard": return ["Your rock crushes my lizard! You win this one.", 1];
-                case "spock": return ["My Spock vaporizes your rock!", 0];
+    //define results as results.playerChoice.computerChoice[message, result]
+    const results = {
+            rock: { 
+                paper: ["My paper covers your rock! Point for me.", 0],
+                scissors: ["Your rock crushes my scissors! One for you.", 1],
+                lizard: ["Your rock crushes my lizard! You win this one.", 1],
+                spock: ["My Spock vaporizes your rock!", 0],
+            },
+            paper: { 
+                rock: ["Your paper covers my rock! Point for you.", 1],
+                scissors: ["My scissors cut your paper! I can win this!", 0],
+                lizard: ["My lizard eats your paper! Mmmm tasty!", 0],
+                spock: ["Your paper disproves my Spock! Good logic!", 1],
+            },
+            scissors: { 
+                rock: ["My rock crushes your scissors! One for me.", 0],
+                paper: ["Your scissors cut my paper! Ouch.", 1],
+                lizard: ["Your scissors decapitate my lizard! Maybe it can grow back!", 1],
+                spock: ["My Spock smashes your scissors!", 0],
+            },
+            lizard: { 
+                rock: ["My rock crushes your lizard! I got this.", 0],
+                paper: ["Your lizard eats my paper! And I got school tomorrow.", 1],
+                scissors: ["My scissors decapitate your lizard! Head isn't a tail.", 0],
+                spock: ["Your lizard poisons my Spock!", 1],
+            },
+            spock: { 
+                rock: ["Your Spock vaporizes my rock!", 1],
+                paper: ["My paper disproves your Spock! I'm the best.", 0],
+                scissors: ["Your Spock smashes my scissors! An angry Vulcan!", 1],
+                lizard: ["My lizard poisons your Spock!", 0],
             }
+        }
         
-        case "paper":
-            switch(computerChoice){
-                case "rock": return ["Your paper covers my rock! Point for you.", 1];
-                case "scissors": return ["My scissors cut your paper! I can win this!", 0];
-                case "lizard": return ["My lizard eats your paper! Mmmm tasty!", 0];
-                case "spock": return ["Your paper disproves my Spock! Good logic!", 1];
-            }
-
-        case "scissors":
-            switch(computerChoice){
-                case "rock": return ["My rock crushes your scissors! One for me.", 0];
-                case "paper": return ["Your scissors cut my paper! Ouch.", 1];
-                case "lizard": return ["Your scissors decapitate my lizard! Maybe it can grow back!", 1];
-                case "spock": return ["My Spock smashes your scissors!", 0];
-            }
-
-        case "lizard":
-            switch(computerChoice){
-                case "rock": return ["My rock crushes your lizard! I got this.", 0];
-                case "paper": ["Your lizard eats my paper! And I got school tomorrow.", 1];
-                case "scissors": return ["My scissors decapitate your lizard! Head isn't a tail.", 0];
-                case "spock": return ["Your lizard poisons my Spock!", 1];
-            }
-        
-        case "spock":
-            switch(computerChoice){
-                case "rock": return ["Your Spock vaporizes my rock!", 1];
-                case "paper": return ["My paper disproves your Spock! I'm the best.", 0];
-                case "scissors": return ["Your Spock smashes my scissors! An angry Vulcan!", 1];
-                case "lizard": return ["Your lizard poisons my Spock!", 0];
-            }
-    }
+    //if choice is identical return draw, otherwise use result cases
+    if (playerChoice === computerChoice) return [`I also chose ${computerChoice}. This round is a draw!`, 2];
+    return results[playerChoice][computerChoice];
 }
 
 /**
