@@ -67,23 +67,33 @@ SIZE, ORIENTATION AND POSITION */
 
 /* shrink bigger rock, 
 scissor and lizard images */
-#rock img, #scissors img, #lizard img {
-    max-width: 70%;
-    max-height: 70%;
+#rock{
+    background: url("../images/rock.svg") no-repeat center center;
+}
+
+#scissors{
+    background: url("../images/scissors.svg") no-repeat center center;
+}
+
+#lizard{
+    background: url("../images/lizard.svg") no-repeat center center;
+}
+
+#rock, #scissors, #lizard{
+    background-size: 65%;
 }
 
 /* move and enlarge spock image to
 feel centered and same size as others */
-#spock img {
-    margin-left: 5%;
-    margin-bottom: 15%;
-    width: 120%;
-    height: 120%;
+#spock {
+    background: url("../images/spock.svg") no-repeat 35% 15%;
+    background-size: 130%;
 }
 
 /* rotate paper image to have 
 similar orientation as others */
-#paper img{
+#paper {
+    background: url("../images/paper.svg") no-repeat center center;
     transform: rotate(-15deg);
 }
 
