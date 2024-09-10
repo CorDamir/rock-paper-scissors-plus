@@ -19,39 +19,55 @@ function chooseRandomly(){
  * 2 - it's a draw
  */
 function determineResult(playerChoice, computerChoice){
+    //define html text to color code choices
+    const c = { //c for computer
+            rock: '<span style="color: red">rock</span>',
+            paper: '<span style="color: red">paper</span>',
+            scissors: '<span style="color: red">scissors</span>',
+            lizard: '<span style="color: red">lizard</span>',
+            spock: '<span style="color: red">Spock</span>'
+        };
+    const p ={ //p for player
+            rock: '<span style="color: blue">rock</span>',
+            paper: '<span style="color: blue">paper</span>',
+            scissors: '<span style="color: blue">scissors</span>',
+            lizard: '<span style="color: blue">lizard</span>',
+            spock: '<span style="color: blue">Spock</span>'
+        };
+        
     //define results as results.playerChoice.computerChoice[message, result]
     const results = {
             rock: { 
-                paper: ["My paper covers your rock! Point for me.", 0],
-                scissors: ["Your rock crushes my scissors! One for you.", 1],
-                lizard: ["Your rock crushes my lizard! You win this one.", 1],
-                spock: ["My Spock vaporizes your rock!", 0],
+                paper: [`My ${c.paper} covers your ${p.rock}! Point for me.`, 0],
+                scissors: [`Your ${p.rock} crushes my ${c.scissors}! One for you.`, 1],
+                lizard: [`Your ${p.rock} crushes my ${c.lizard}! You win this one.`, 1],
+                spock: [`My ${c.spock} vaporizes your ${p.rock}!`, 0],
             },
             paper: { 
-                rock: ["Your paper covers my rock! Point for you.", 1],
-                scissors: ["My scissors cut your paper! I can win this!", 0],
-                lizard: ["My lizard eats your paper! Mmmm tasty!", 0],
-                spock: ["Your paper disproves my Spock! Good logic!", 1],
+                rock: [`Your ${p.paper} covers my ${c.rock}! Point for you.`, 1],
+                scissors: [`My ${c.scissors} cut your ${p.paper}! I can win this!`, 0],
+                lizard: [`My ${c.lizard} eats your ${p.paper}! Mmmm tasty!`, 0],
+                spock: [`Your ${p.paper} disproves my ${c.spock}! Good logic!`, 1],
             },
             scissors: { 
-                rock: ["My rock crushes your scissors! One for me.", 0],
-                paper: ["Your scissors cut my paper! Ouch.", 1],
-                lizard: ["Your scissors decapitate my lizard! Maybe it can grow back!", 1],
-                spock: ["My Spock smashes your scissors!", 0],
+                rock: [`My ${c.rock} crushes your ${p.scissors}! One for me.`, 0],
+                paper: [`Your ${p.scissors} cut my ${c.paper}! Ouch.`, 1],
+                lizard: [`Your ${p.scissors} decapitate my ${c.lizard}! Maybe it can grow back!`, 1],
+                spock: [`My ${c.spock} smashes your ${p.scissors}!`, 0],
             },
             lizard: { 
-                rock: ["My rock crushes your lizard! I got this.", 0],
-                paper: ["Your lizard eats my paper! And I got school tomorrow.", 1],
-                scissors: ["My scissors decapitate your lizard! Head isn't a tail.", 0],
-                spock: ["Your lizard poisons my Spock!", 1],
+                rock: [`My ${c.rock} crushes your ${p.lizard}! I got this.`, 0],
+                paper: [`Your ${p.lizard} eats my ${c.paper}! And I got school tomorrow.`, 1],
+                scissors: [`My ${c.scissors} decapitate your ${p.lizard}! Head isn't a tail.`, 0],
+                spock: [`Your ${p.lizard} poisons my ${c.spock}!`, 1],
             },
             spock: { 
-                rock: ["Your Spock vaporizes my rock!", 1],
-                paper: ["My paper disproves your Spock! I'm the best.", 0],
-                scissors: ["Your Spock smashes my scissors! An angry Vulcan!", 1],
-                lizard: ["My lizard poisons your Spock!", 0],
+                rock: [`Your ${p.spock} vaporizes my ${c.rock}!`, 1],
+                paper: [`My ${c.paper} disproves your ${p.spock}! I'm the best.`, 0],
+                scissors: [`Your ${p.spock} smashes my ${c.scissors}! An angry Vulcan!`, 1],
+                lizard: [`My ${c.lizard} poisons your ${p.spock}!`, 0],
             }
-        }
+        };
     //if choice is identical return draw, otherwise use result cases
     if (playerChoice === computerChoice) return [`I also chose ${computerChoice}. This round is a draw!`, 2];
     return results[playerChoice][computerChoice];
@@ -75,7 +91,7 @@ function handleChoiceClick(){
     let result = determineResult(playerChoice,computerChoice);
     
     //set the result message
-    document.getElementById("message").innerText = result[0]; 
+    document.getElementById("message").innerHTML = result[0]; 
 
     //set score
     switch(result[1]){
@@ -89,7 +105,7 @@ function handleChoiceClick(){
  */
 function initialSetup(){
     let choices = document.getElementsByClassName("choice-container");
-    for (choice of choices) choice.addEventListener("click", handleChoiceClick);
+    for (let choice of choices) choice.addEventListener("click", handleChoiceClick);
 }
 
 window.onload = initialSetup();
