@@ -80,16 +80,47 @@ function setScore(element){
     let score = parseInt(element.innerText);
     element.innerText = ++score;
 }
+/* 
+   blue + Y-axis rotation for player
+   reddish + X-axis rotation for computer 
+*/
+function animateChoices(playerChoice, computerChoice){
+    playerChoice.style.backgroundColor = "blue";
+    playerChoice.style.transform = "rotateY(360deg)";
+    computerChoice.style.backgroundColor = "maroon";
+    computerChoice.style.transform = "rotateX(360deg)";
+}
+function removeListeners(choices){
+    for(let choice of choices) {
+        choice.removeEventListener("click", handleChoiceClick);
+        choice.removeEventListener("mouseover", handleMouseOver);
+        choice.removeEventListener("mouseout", handleMouseOut);
+    }
+}
 /**
  * handles gameplay on user selection
  * and updates html with message and 
  * score
  */
 function handleChoiceClick(){
+    //remove user interaction, then add it back after 1,5 seconds
+    removeListeners(document.getElementsByClassName("choice-container"));
+    setTimeout(initialSetup, 1500);
+
     let playerChoice = this.getAttribute("id");
     let computerChoice = chooseRandomly();
     let result = determineResult(playerChoice,computerChoice);
-    
+
+    //reset all elements to default styling
+    for (let choice of document.getElementsByClassName("choice-container")){
+            choice.style.transform = "rotateX(0deg)";
+            choice.style.transform = "rotateY(0deg)";
+            choice.style.backgroundColor = "#d9dbdf";
+    }
+
+    //rotation and color animation to make choices clear
+    animateChoices(this, document.getElementById(computerChoice));
+
     //set the result message
     document.getElementById("message").innerHTML = result[0]; 
 
@@ -97,19 +128,32 @@ function handleChoiceClick(){
     switch(result[1]){
         case 0: setScore(document.getElementById("computer-score")); break;
         case 1: setScore(document.getElementById("player-score")); break;
-        default: break; //no action needed on draw
-    }
+        
+        default: //animate for draw
+            this.style.backgroundColor = "darkmagenta";
+            this.style.transform = "rotateY(360deg)";
+            break;
+    }  
 }
-/* #e05263 - use for computer color
-   #12bdeb - use for player color
-   #d9dbdf - default on page load
-*/
+
 function handleMouseOver(){
-    this.style.backgroundColor = "#14bdeb";
+        this.style.backgroundColor = "dodgerblue";
 }   
 
 function handleMouseOut(){
-    this.style.backgroundColor = "#d9dbdf";
+    if(this.style.backgroundColor === "dodgerblue")  
+        this.style.backgroundColor = "#d9dbdf";
+}
+
+/**
+ * reverses rotations to set up next animation
+ * event
+ */
+function revertTransition(event){
+    if (event.propertyName === "transform") {
+        this.style.transform = "rotateY(0deg)";
+        this.style.transform = "rotateX(0deg)";
+    };
 }
 /**
  * adds event listeners to all game choices
@@ -121,6 +165,7 @@ function initialSetup(){
         choice.addEventListener("click", handleChoiceClick);
         choice.addEventListener("mouseover", handleMouseOver);
         choice.addEventListener("mouseout", handleMouseOut);
+        choice.addEventListener("transitionend", revertTransition);
     }
 }
 

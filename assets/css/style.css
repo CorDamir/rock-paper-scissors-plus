@@ -51,7 +51,8 @@ objects, set boundaries for flexbox */
     max-height: 200px;
     border-radius: 50%;
     border: 5px solid black;
-    transition: all 800ms;
+    transition-duration: 800ms, 750ms;
+    transition-property: background-color, transform;
 }
 
 /* ADJUST IMAGES TO ROUGHLY SAME 
