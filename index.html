@@ -16,6 +16,17 @@
             <button id="rules">How to play?</button>
         </header>
 
+        <!-- hidden modals here -->
+        <div id="settings">
+            <label for="player-name">Your game tag (up to 6 characters): </label>
+            <input type="text" id="player-name" value="PLAYER" maxlength="6"> 
+            
+            <label for="win-score">Points for victory: </label>
+            <input type="range" id="win-score" min="5" max="50" value="10">
+            
+            <button>Start!</button>
+        </div>
+
         <main>
             <div id="message">Make your choice... I'm waiting!</div>
             
@@ -28,11 +39,11 @@
             </div>
 
             <div id="score-container">
-                <p id="you"> PLAYER: <span><span id="player-score">0</span> V</span></p>
+                <p id="you">PLAYER: <span><span id="player-score">0</span> V</span></p>
                 <p id="computer"><span>S <span id="computer-score">0</span></span> :COMPUTER </p>
             </div>
         </main>
-        
+
         <script src="./assets/jscript/game.js"></script>
     </body>
 
