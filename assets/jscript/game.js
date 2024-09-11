@@ -103,7 +103,8 @@ function removeListeners(choices){
  * score
  */
 function handleChoiceClick(){
-    //remove user interaction, then add it back after 1,5 seconds
+    //remove user interaction, then add it back after
+    // 1,5 seconds (animation time)
     removeListeners(document.getElementsByClassName("choice-container"));
     setTimeout(initialSetup, 1500);
 
@@ -128,7 +129,6 @@ function handleChoiceClick(){
     switch(result[1]){
         case 0: setScore(document.getElementById("computer-score")); break;
         case 1: setScore(document.getElementById("player-score")); break;
-        
         default: //animate for draw
             this.style.backgroundColor = "darkmagenta";
             this.style.transform = "rotateY(360deg)";
@@ -144,7 +144,6 @@ function handleMouseOut(){
     if(this.style.backgroundColor === "dodgerblue")  
         this.style.backgroundColor = "#d9dbdf";
 }
-
 /**
  * reverses rotations to set up next animation
  * event
