@@ -7,20 +7,23 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Nerko One", cursive;
+    min-width: 320px;
 }
 
 /* header with buttons */
 header{
     text-align: center;
     background-color: #243454;
-    padding: 15px;
+    padding: 5px;
     box-shadow: 0 3px 3px black;
 }
 
-/* message on top */
+/* message on top - centered*/
 #message{
-    font-size: 200%;
+    min-height: 80px;
+    margin: 5px 5vw 0 5vw;
     text-align: center;
+    font-size: 180%;
 }
 
 /* set up flex container to

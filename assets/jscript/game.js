@@ -52,18 +52,18 @@ function determineResult(playerChoice, computerChoice){
             scissors: { 
                 rock: [`My ${c.rock} crushes your ${p.scissors}! One for me.`, 0],
                 paper: [`Your ${p.scissors} cut my ${c.paper}! Ouch.`, 1],
-                lizard: [`Your ${p.scissors} decapitate my ${c.lizard}! Maybe it can grow back!`, 1],
+                lizard: [`Your ${p.scissors} decapitate my ${c.lizard}! Can it grow?`, 1],
                 spock: [`My ${c.spock} smashes your ${p.scissors}!`, 0],
             },
             lizard: { 
                 rock: [`My ${c.rock} crushes your ${p.lizard}! I got this.`, 0],
-                paper: [`Your ${p.lizard} eats my ${c.paper}! And I got school tomorrow.`, 1],
-                scissors: [`My ${c.scissors} decapitate your ${p.lizard}! Head isn't a tail.`, 0],
+                paper: [`Your ${p.lizard} eats my ${c.paper}! My homework!`, 1],
+                scissors: [`My ${c.scissors} decapitate your ${p.lizard}!`, 0],
                 spock: [`Your ${p.lizard} poisons my ${c.spock}!`, 1],
             },
             spock: { 
                 rock: [`Your ${p.spock} vaporizes my ${c.rock}!`, 1],
-                paper: [`My ${c.paper} disproves your ${p.spock}! I'm the best.`, 0],
+                paper: [`My ${c.paper} disproves your ${p.spock}! I'm great.`, 0],
                 scissors: [`Your ${p.spock} smashes my ${c.scissors}! An angry Vulcan!`, 1],
                 lizard: [`My ${c.lizard} poisons your ${p.spock}!`, 0],
             }
@@ -114,7 +114,7 @@ function handleChoiceClick(){
     //remove user interaction, then add it back after
     // 1,5 seconds (animation time)
     removeListeners(document.getElementsByClassName("choice-container"));
-    setTimeout(initialSetup, 1500);
+    setTimeout(initialSetup, 1300);
 
     let playerChoice = this.getAttribute("id");
     let computerChoice = chooseRandomly();
