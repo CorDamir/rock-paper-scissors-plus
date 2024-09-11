@@ -12,7 +12,7 @@
     
     <body>
         <!-- hidden modals here -->
-        <div class="modal-container">
+        <div id="modal-container">
             <div id="settings">
                 <h2>SETTINGS</h2>
                     <div>  
@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <label for="win-score">Points for victory: <span id="win-condition">10</span></label>
-                        <input type="range" id="win-score" min="5" max="50" value="10">
+                        <input type="range" id="win-score" min="5" max="50" step="5" value="10">
                     </div>
                 <button id="start-button">START!</button>
             </div>
@@ -43,8 +43,8 @@
                 <div class="choice-container" id="spock"></div>
             </div>
 
-            <div id="score-container">
-                <p id="you">PLAYER: <span><span id="player-score">0</span> V</span></p>
+            <div id="score-container"> <!--span structure for spaces and color split -->
+                <p id="you"><span id="game-tag">PLAYER</span>: <span><span id="player-score">0</span> V</span></p>
                 <p id="computer"><span>S <span id="computer-score">0</span></span> :COMPUTER </p>
             </div>
         </main>

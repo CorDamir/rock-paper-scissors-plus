@@ -52,7 +52,7 @@ function determineResult(playerChoice, computerChoice){
             scissors: { 
                 rock: [`My ${c.rock} crushes your ${p.scissors}! One for me.`, 0],
                 paper: [`Your ${p.scissors} cut my ${c.paper}! Ouch.`, 1],
-                lizard: [`Your ${p.scissors} decapitate my ${c.lizard}! Can it grow?`, 1],
+                lizard: [`Your ${p.scissors} decapitate my ${c.lizard}!`, 1],
                 spock: [`My ${c.spock} smashes your ${p.scissors}!`, 0],
             },
             lizard: { 

@@ -13,6 +13,8 @@ body{
 /* consistent font into buttons */
 button {
     font-family: "Nerko One", cursive;
+    text-transform: uppercase;
+    font-size: 110%;
 }
 
 /* header with buttons */
@@ -115,9 +117,9 @@ right, color coded */
     border: 2px solid red;
     border-left: 0;
 }
-
+/* modal styling */
 /* cover entire body */
-.modal-container{
+#modal-container{
     z-index: 1;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.9);
@@ -149,7 +151,6 @@ right, color coded */
     width: 80%;
 }
 
-#start-button{
-    font-size: 110%;
+#player-name{
+    text-transform: uppercase;
 }
-
