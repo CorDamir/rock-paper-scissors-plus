@@ -1,5 +1,5 @@
 function handleRangeSetting(){
-    alert(this.getAttribute("value"));
+    document.getElementById("win-condition").innerText = this.value;
 }
 
 function startGame(){

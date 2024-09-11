@@ -135,18 +135,18 @@ right, color coded */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: 140%;
 }
 
 #settings > h2{
-    margin-top: 10px;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 #settings div{
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 
 #start-button{
