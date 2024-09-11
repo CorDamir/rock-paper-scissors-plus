@@ -172,5 +172,3 @@ function initialSetup(){
         choice.addEventListener("transitionend", revertTransition);
     }
 }
-
-window.onload = initialSetup();
