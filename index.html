@@ -11,21 +11,26 @@
     </head>
     
     <body>
+        <!-- hidden modals here -->
+        <div class="modal-container">
+            <div id="settings">
+                <h2>SETTINGS</h2>
+                    <div>  
+                        <label for="player-name">Your game tag:</label>
+                        <input type="text" id="player-name" value="PLAYER" maxlength="6"> 
+                    </div>
+                    <div>
+                        <label for="win-score">Points for victory: <span>10</span></label>
+                        <input type="range" id="win-score" min="5" max="50" value="10">
+                    </div>
+                <button id="start">START!</button>
+            </div>
+        </div>
+
         <header>
             <button id="game-start">New game</button>
             <button id="rules">How to play?</button>
         </header>
-
-        <!-- hidden modals here -->
-        <div id="settings">
-            <label for="player-name">Your game tag (up to 6 characters): </label>
-            <input type="text" id="player-name" value="PLAYER" maxlength="6"> 
-            
-            <label for="win-score">Points for victory: </label>
-            <input type="range" id="win-score" min="5" max="50" value="10">
-            
-            <button>Start!</button>
-        </div>
 
         <main>
             <div id="message">Make your choice... I'm waiting!</div>

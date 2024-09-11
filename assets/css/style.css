@@ -10,6 +10,11 @@ body{
     min-width: 320px;
 }
 
+/* consistent font into buttons */
+button {
+    font-family: "Nerko One", cursive;
+}
+
 /* header with buttons */
 header{
     text-align: center;
@@ -110,3 +115,41 @@ right, color coded */
     border: 2px solid red;
     border-left: 0;
 }
+
+/* cover entire body */
+.modal-container{
+    z-index: 1;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+}
+
+/* settings as modal on top*/
+#settings{
+    width: 250px;
+    height: 350px;
+    margin: 5% auto;
+    background-color: white;
+    box-shadow: white 0 0 10px; /* make it shine! */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 140%;
+}
+
+#settings > h2{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#settings div{
+    display: flex;
+    flex-direction: column;
+}
+
+#start{
+    font-size: 110%;
+}
+
