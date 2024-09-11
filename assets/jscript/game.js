@@ -97,6 +97,14 @@ function removeListeners(choices){
         choice.removeEventListener("mouseout", handleMouseOut);
     }
 }
+/* resets all game-choices to starting style */
+function resetStyle(){
+    for (let choice of document.getElementsByClassName("choice-container")){
+        choice.style.transform = "rotateX(0deg)";
+        choice.style.transform = "rotateY(0deg)";
+        choice.style.backgroundColor = "#d9dbdf";
+    }
+}
 /**
  * handles gameplay on user selection
  * and updates html with message and 
@@ -113,11 +121,7 @@ function handleChoiceClick(){
     let result = determineResult(playerChoice,computerChoice);
 
     //reset all elements to default styling
-    for (let choice of document.getElementsByClassName("choice-container")){
-            choice.style.transform = "rotateX(0deg)";
-            choice.style.transform = "rotateY(0deg)";
-            choice.style.backgroundColor = "#d9dbdf";
-    }
+    resetStyle();
 
     //rotation and color animation to make choices clear
     animateChoices(this, document.getElementById(computerChoice));
@@ -137,6 +141,7 @@ function handleChoiceClick(){
 }
 
 function handleMouseOver(){
+        resetStyle();
         this.style.backgroundColor = "dodgerblue";
 }   
 
