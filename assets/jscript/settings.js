@@ -17,6 +17,7 @@ function startGame(){
     message.style.color =  "black";
     message.innerText = "Make your choice... I'm waiting!";
 
+    document.getElementById("settings").style.display = "none";
     document.getElementById("modal-container").style.display = "none";
 
     resetStyle();
@@ -25,7 +26,13 @@ function startGame(){
 
 /** opens new game settings */
 function newGame(){
-    document.getElementById("modal-container").style.display = "flex";
+    document.getElementById("modal-container").style.display = "block";
+    document.getElementById("settings").style.display = "flex";
+}
+
+function showInfo(){
+    document.getElementById("modal-container").style.display = "block";
+    document.getElementById("how-to-play").style.display = "block";
 }
 
 /** sets listeners for game start button and range input */ 
@@ -33,6 +40,8 @@ function setSettings(){
     document.getElementById("start-button").addEventListener("click", startGame);
     document.getElementById("win-score").addEventListener("input", handleRangeSetting);
     document.getElementById("new-game").addEventListener("click", newGame);
+    document.getElementById("rules").addEventListener("click", showInfo);
+    document.getElementById("close-info").addEventListener("click", closeInfo);
 }
 
 window.onload = setSettings();
