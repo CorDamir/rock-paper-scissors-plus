@@ -73,12 +73,39 @@ function determineResult(playerChoice, computerChoice){
     return results[playerChoice][computerChoice];
 }
 /**
+ * animates all choices to winner color
+ * and displays final message
+*/ 
+function endGame(playerWon){
+    let color = "maroon";
+    let animation = "rotateX(360deg)";
+    let endMessage = "COMPUTER WON!"
+
+    if (playerWon) {
+        color = "blue";
+        animation = "rotateY(360deg)";
+        endMessage = document.getElementById("game-tag").innerText + " WON!";
+    }
+
+    let message = document.getElementById("message");
+    //red and NOT maroon for text on computer win
+    playerWon ? message.style.color = color : message.style.color = "red";
+    message.innerText = endMessage;
+
+    let choices = document.getElementsByClassName("choice-container");
+    
+    for(let choice of choices) {
+        choice.style.backgroundColor = color;
+        choice.style.transform = animation;
+    }
+}
+/**
  * takes content of received element
- * and increments it by one 
+ * and increments it by one
  */
 function setScore(element){
     let score = parseInt(element.innerText);
-    element.innerText = ++score;
+    element.innerText = ++score;  
 }
 /* 
    blue + Y-axis rotation for player
@@ -112,9 +139,9 @@ function resetStyle(){
  */
 function handleChoiceClick(){
     //remove user interaction, then add it back after
-    // 1,5 seconds (animation time)
+    //animation time
     removeListeners(document.getElementsByClassName("choice-container"));
-    setTimeout(initialSetup, 1300);
+    setTimeout(initialSetup, 1205);
 
     let playerChoice = this.getAttribute("id");
     let computerChoice = chooseRandomly();
@@ -159,12 +186,27 @@ function revertTransition(event){
         this.style.transform = "rotateX(0deg)";
     };
 }
+/** checks if game ended and calls gameEnd function
+*/
+function gameEnded(){
+    let playerScore = document.getElementById("player-score").innerText;
+    let computerScore = document.getElementById("computer-score").innerText;
+    let winCondition = document.getElementById("win-condition").innerText;
+
+    switch (winCondition) {
+        case playerScore: endGame(true); return true;
+        case computerScore: endGame(false); return true;
+        default: return false;
+    }
+}
 /**
  * adds event listeners to all game choices
  */
 function initialSetup(){
-    let choices = document.getElementsByClassName("choice-container");
+    if (gameEnded()) return;
     
+    let choices = document.getElementsByClassName("choice-container");
+
     for (let choice of choices) {
         choice.addEventListener("click", handleChoiceClick);
         choice.addEventListener("mouseover", handleMouseOver);
