@@ -119,7 +119,7 @@ right, color coded */
 }
 /* modal styling */
 /* cover entire body */
-.modal-container{
+#modal-container{
     z-index: 1;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.8);
@@ -129,7 +129,8 @@ right, color coded */
 
 /* settings as modal on top*/
 .modal-element{
-    margin: 10% auto;
+    margin: auto;
+    margin-top: 50px;
     background-color: white;
     box-shadow: white 0 0 10px; /* make it shine! */
 }
@@ -142,7 +143,6 @@ right, color coded */
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    display: none; /* for making how-to-play modal */
 }
 
 #settings > h2{
@@ -164,15 +164,18 @@ right, color coded */
     position: relative;
     padding: 10px;
     width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
     max-width: 430px;
     font-size: 160%;
+    display: none; /* only changed by js */
 }
 
 #how-to-play > h2{
     text-align: center;
     margin: 0;
 }
-/* put close button on top-right */
+/* put 40x40 close button on top-right */
 #close-info{
     position: absolute;
     right: 0px;
@@ -181,4 +184,9 @@ right, color coded */
     width: 40px;
     height: 40px;
     text-align: center;
+}
+
+#close-info:hover{
+    color: red;
+    user-select: none;
 }
