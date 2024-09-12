@@ -119,26 +119,30 @@ right, color coded */
 }
 /* modal styling */
 /* cover entire body */
-#modal-container{
+.modal-container{
     z-index: 1;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     height: 100%;
 }
 
 /* settings as modal on top*/
-#settings{
-    width: 250px;
-    height: 350px;
-    margin: 5% auto;
+.modal-element{
+    margin: 10% auto;
     background-color: white;
     box-shadow: white 0 0 10px; /* make it shine! */
+}
+
+#settings{
+    height: 350px;
+    width: 250px;
+    font-size: 140%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 140%;
+    display: none; /* for making how-to-play modal */
 }
 
 #settings > h2{
@@ -153,4 +157,28 @@ right, color coded */
 
 #player-name{
     text-transform: uppercase;
+}
+
+/* info modal styling */
+#how-to-play{
+    position: relative;
+    padding: 10px;
+    width: 80%;
+    max-width: 430px;
+    font-size: 160%;
+}
+
+#how-to-play > h2{
+    text-align: center;
+    margin: 0;
+}
+/* put close button on top-right */
+#close-info{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 130%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
 }

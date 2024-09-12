@@ -203,7 +203,7 @@ function gameEnded(){
  * adds event listeners to all game choices
  */
 function initialSetup(){
-    if (gameEnded()) return;
+    if (gameEnded()) return; //do not re-enable listeners on game end
     
     let choices = document.getElementsByClassName("choice-container");
 

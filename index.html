@@ -12,8 +12,8 @@
     
     <body>
         <!-- hidden modals here -->
-        <div id="modal-container">
-            <div id="settings">
+        <div class="modal-container">
+            <div id="settings" class="modal-element">
                 <h2>SETTINGS</h2>
                     <div>  
                         <label for="player-name">Your game tag:</label>
@@ -25,12 +25,25 @@
                     </div>
                 <button id="start-button">START!</button>
             </div>
+
+            <div id="how-to-play" class="modal-element">
+                <h2>INFO</h2><span id="close-info">X</span>
+                <p>There are five possible choices. Each defeats two and loses from two.</p>
+                <p>ROCK crushes scissors and lizard.</p>
+                <p>PAPER covers rock and disproves Spock.</p>
+                <p>SCISSORS cut paper and decapitate lizard.</p>
+                <p>LIZARD poisons Spock and eats paper.</p>
+                <p>SPOCK vaporizes rock and crushes scissors.</p>
+                <p>Click on image to make your choice and computer will
+                    reveal it's choice.
+                </p>
+            </div>
         </div>
 
         <header>
             <button id="new-game">New game</button>
             <button id="rules">How to play?</button>
-        </header>
+        </header>          
 
         <main>
             <div id="message">Make your choice... I'm waiting!</div>
