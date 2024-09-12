@@ -17,12 +17,20 @@ button {
     font-size: 110%;
 }
 
+button:hover{
+    background-color: dodgerblue;
+}
+
 /* header with buttons */
 header{
     text-align: center;
     background-color: #243454;
     padding: 5px;
     box-shadow: 0 3px 3px black;
+}
+
+header button{
+    margin: 0 15px;
 }
 
 /* message on top - centered*/

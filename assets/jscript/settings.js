@@ -35,6 +35,11 @@ function showInfo(){
     document.getElementById("how-to-play").style.display = "block";
 }
 
+function closeInfo(){
+    document.getElementById("how-to-play").style.display = "none";
+    document.getElementById("modal-container").style.display = "none";
+}
+
 /** sets listeners for game start button and range input */ 
 function setSettings(){
     document.getElementById("start-button").addEventListener("click", startGame);
