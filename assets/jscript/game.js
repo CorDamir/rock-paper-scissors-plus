@@ -79,7 +79,7 @@ function determineResult(playerChoice, computerChoice){
 function endGame(playerWon){
     let color = "maroon";
     let animation = "rotateX(360deg)";
-    let endMessage = "COMPUTER WON!"
+    let endMessage = "COMPUTER WON!";
 
     if (playerWon) {
         color = "blue";
@@ -184,7 +184,7 @@ function revertTransition(event){
     if (event.propertyName === "transform") {
         this.style.transform = "rotateY(0deg)";
         this.style.transform = "rotateX(0deg)";
-    };
+    }
 }
 /** checks if game ended and calls gameEnd function
 */
