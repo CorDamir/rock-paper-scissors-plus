@@ -1,131 +1,164 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rock - Paper - Scissors - Lizard - Spock
 
-Welcome Damir Ćorić,
+Rock - Paper - Scissors - Lizard - Spock is an upgrade to a famous rock - paper - scissors game. Idea comes from a popular sitcom "[The Big Bang Theory](https://www.imdb.com/title/tt0898266/)". Two additional options mean every choice can be beaten by two different choices and it also beats two choices reducing a chance of draw significantly. Playing against a computer provides fun and familiarizes users with five choice interactions so it can be used live later. Beat a rock with Mr. Spock!
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Mockup: website on different devices](./assets/readme-img/mockup.jpg)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+<br>
 
-## Gitpod Reminders
+ ## FEATURES
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+  ### HEADER
 
-`python3 -m http.server`
+  Simple header with two buttons adds options without feeling of influencing the game space.
 
-A blue button should appear to click: _Make Public_,
+  ![Header screenshot](./assets/readme-img/header.jpg)
 
-Another blue button should appear to click: _Open Browser_.
+  ### SETTINGS / GAME START
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+  On first page load or via header's "NEW GAME" button, a settings menu for a new game pops up. It's displayed as a modal on top of a shaded current game state. White shadow completes attention drawing. User is offered to type their game tag via text input, choose winning point amount via slider and to start a game via start button. Very clear and intuitive
 
-A blue button should appear to click: _Make Public_,
+  ![Settings screenshot](./assets/readme-img/settings.jpg)
 
-Another blue button should appear to click: _Open Browser_.
+  ### INFO
+ 
+  By using header's "HOW TO PLAY?" button user can open a simple clarification of the game. It has the same attention-drawing style as settings and a close button on top right corner which resumes the game exactly as left.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  ![Info window screenshot](./assets/readme-img/info.jpg)
 
-To log into the Heroku toolbelt CLI:
+  ### GAME AREA AND CHOICE APPEARANCE
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  Game itself is played by clicking / touching a circle with a choice image. Options are intuitively clear with representing images. All options are inside an obvious game area distinguished with border and background color. It is completely responsive and works on all screen sizes.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+  ![Game area screenshot](./assets/readme-img/play-mobile.jpg)
 
-### Connecting your Mongo database
+  ### INTERACTION FEEDBACK
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+  ** ANIMATION AND COLOR CODING CHOICES **
 
-------
+  After choosing an option, game will color user and computer choice in blue and red respectively. It will also animate those choises by rotation. A draw will be presented with purple color.
 
-## Release History
+  ![Gameplay screenshot](./assets/readme-img/play-widescreen.jpg)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  ** GAME MESSAGE **
 
-**June 18, 2024,** Add Mongo back into template
+  For every interaction, a message will be displayed above game area. It contains color-coded user and computer choices, their interaction and result.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+  ![Game message screenshot](./assets/readme-img/message.jpg)
 
-**May 28 2024:** Fix Mongo and Links installs
+  ** SCORE KEEPING **
 
-**April 26 2024:** Update node version to 16
+  Below game area there is a score keeping area. It displays user's game tag and score on the left in blue and computer score and text in red on the right. Updated immediately on every choice selection.
 
-**September 20 2023:** Update Python version to 3.9.17.
+  ![Score area screenshot](./assets/readme-img/score.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+  ** GAME END SCREEN ** 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  When player or computer get a game-winning point, game message will be fully in their respective color declaring a winner, all choices in game area will animate and change into winner's color and further interaction with game area is disabled.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  ![Game end screenshot](./assets/readme-img/game-end.jpg)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  ### INTUITION AND RESPONSIVENESS
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+  Header is simple with only two clear options. Settings and info are extremely easy to grasp. Game area is very easy to use, messages are clear and score keeping is obvious. Together this makes a truly intuitive design and a game that can be learned and played even without instructions in seconds. It is entirely responsive and works well on all screen sizes.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  ### FUTURE FEATURES
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  - add player vs player capability
+  - add an algorithm to computer play that analyses user input and chooses accordingly - implement it as hard mode in options
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+<br>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## BUGS
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  ### FIXED DURING TESTING
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  | PROBLEM | FIX |
+  | - | - | 
+  | error: undefined alert instead of a message for some interactions | correct spelling for lizard variable (I typed 'lizzard')   |
+  | score doesn't update correctly beyond 10 | create a span structure for score display and edit appropriate span.innerText |
+  | 'choice not declared' error from JSHint  | declare choice variable: for(choice of choices) - > for(let choice of choices) |
+  | animation doesn't work after first time | reason: considered already animated / fix: add animation reversing function which brings element to original state |
+  | animations acting inconsistently when playing the game fast | add functionality that removes user interaction before running animation is completed | 
+  | new game begins from old game scores | add code to reset score on new game launch |
+  | calling a game.js function from settings.js file doesn't work | reverse &lt;script&gt; element order in HTML to load game.js first |
+  |||
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  ### CURRENT BUGS
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+  No bugs after testing phase, all features work as intended!
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<br>  
 
-------
+## FINAL TESTING INFORMATION
 
-## FAQ about the uptime script
+  ### MANUAL USAGE TEST
 
-**Why have you added this script?**
+  Usage test was done on android phone. On PC it was done using chrome, opera, edge and firefox.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+  | Test | Result |
+  |-|-|
+  |touch/click on "new game" button | opened settings modal with intended display style |
+  |typing in game tag input | always uppercase, no more than six characters accepted |
+  |moving range input | label text adjusted to range input value|
+  |touch/click on "start game" button | score reset, player name updated, game interactions working |
+  |start game with empty player game tag | game tag defaulted to "PLAYER"|
+  |touch/click on "how to play" button | opened info modal with intended display style |
+  |touch/click on closing "X" in info modal | modal closed as intended, X turns red on hover |
+  |test all game choice combinations | appropriate message displayed, score updated as intended, animations and coloring working as intended|
+  |game point set in settings reached by player | all choices animated and in blue, appropriate blue message displayed, no further interaction with game area|
+  |game point set in settings reached by computer | all choices animated and in maroon, appropriate red message displayed, no further interaction with game area|
+  |window resized | page responsive as intended|
+  |||
 
-**How will this affect me?**
+  ### HTML VALIDATION
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+  HTML code verified with no errors using [W3C HTML validator](https://validator.w3.org/nu/).
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+  ### CSS VALIDATION
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+  CSS code verified with no errors using [W3C CSS validator](https://jigsaw.w3.org/css-validator).
 
-**So….?**
+  ### JAVASCRIPT VALIDATION
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+  Javascript code verified with no errors using [JSHint](https://jshint.com)
 
-**Can I opt out?**
+  ### LIGHTHOUSE TEST
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+  Perfect score for desktop version! 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+  ![lighthouse desktop test results](./assets/readme-img/lighthouse-desktop.jpg)
 
-**Anything more?**
+  Near-perfect score for mobile version.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+  ![lighthouse desktop test results](./assets/readme-img/lighthouse-mobile.jpg)
 
----
+<br>
 
-Happy coding!
+## BUILD CONTEXT
+
+### ENVIRONMENT
+
+  Entire project was built in [Gitpod](https://www.gitpod.io) using git for version control via command line interface. (git add and git commit commands) and using gitpod's server hosting perk (python3 -m http.server command)
+
+### DEPLOYMENT
+
+  Project was pushed (git push command) to connected [GitHub](https://github.com) account and deployed there with public visibility. You can find the LIVE VERSION [here](https://cordamir.github.io/rock-paper-scissors-plus/).
+
+  **CLONE PROJECT**
+
+  To clone a project from GitHub: 
+   - go to desired repository ([this project is here](https://github.com/CorDamir/rock-paper-scissors-plus))
+   - use the green "Code" button 
+   - use a convenient "copy to clipboard" icon to copy web url
+   - paste this url to your desired IDE
+
+   <br>
+
+## CREDITS
+
+  - "Nerko One" font is from [Google fonts](https://fonts.google.com)
+  - wonderful svg _images_ used for game choices are from [Pixabay](https://pixabay.com)
+  - my original javascript code contained nested _switch_ statements and it was changed to objects instead as suggested by my mentor Spencer. You can find his website [here](https://5pence.net)
+  - I used [MDN Web Docs](https://developer.mozilla.org/en-US/) and [W3Schools](https://www.w3schools.com) to search for and learn more about CSS and JavaScript functionalities (transform and transition in css + setTimeout function in JS)
+  
