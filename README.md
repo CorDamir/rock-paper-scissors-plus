@@ -2,9 +2,9 @@
 
 Rock - Paper - Scissors - Lizard - Spock is an upgrade to a famous rock - paper - scissors game. Idea comes from a popular sitcom "[The Big Bang Theory](https://www.imdb.com/title/tt0898266/)". Two additional options mean every choice can be beaten by two different choices and it also beats two choices reducing a chance of draw significantly. Playing against a computer provides fun and familiarizes users with five choice interactions so it can be used live later. Beat a rock with Mr. Spock!
 
-![Mockup: website on different devices](./assets/readme-img/mockup.jpg)
-
 <br>
+
+![Mockup: website on different devices](./assets/readme-img/mockup.jpg)
 
  ## FEATURES
 
@@ -121,7 +121,7 @@ Rock - Paper - Scissors - Lizard - Spock is an upgrade to a famous rock - paper 
 
   ### JAVASCRIPT VALIDATION
 
-  Javascript code verified with no errors using [JSHint](https://jshint.com)
+  Javascript code verified with no errors using [JSHint](https://jshint.com).
 
   ### LIGHTHOUSE TEST
 
